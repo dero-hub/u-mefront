@@ -30,15 +30,23 @@ export class SignupComponent implements OnInit {
   saveUser() {
    
     const userDetails = {
-      firstname: this.register.lastname,
-      lastname: this.register.firstname,
+      firstname: this.register.firstname,
+      lastname: this.register.lastname,
       username: this.register.username,
       email: this.register.email,
       dob: this.register.dob.toString(),
       password: this.register.password
       }
       console.log(userDetails);
-      this.http.create(userDetails);
+      this.http.create(userDetails)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
       this.submitted = true;
     };
 
