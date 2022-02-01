@@ -1,41 +1,64 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { User } from '../models/user.model';
-const baseUrl = 'http://localhost:8080/api/auth';
+
+  
+import {Injectable, NgZone} from '@angular/core';
+import axios from 'axios';
+import {Router} from "@angular/router";
+import Swal from 'sweetalert2';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private zone: NgZone) { }
 
-  getAll(): Observable<User[]> {
-    return this.http.get<User[]>(baseUrl);
+  
+  async signup(data: any) {
+
+    // Make a request for a user with a given ID
+    axios.post('http://localhost:8080/api/auth/signup', data)
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+        Swal.fire({
+          text: 'Account Created Sucessfully',
+          icon: 'success',
+          showCancelButton: true,
+        })
+        return response.data;
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+
   }
 
-  get(id: any): Observable<User> {
-    return this.http.get(`${baseUrl}/${id}`);
-  }
+  async signin(data: any) {
+  console.log(data)
+    let self = this;
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+    axios.post('http://localhost:8080/api/auth/signin', data,{headers} )
+      .then(function (response) {
+        // handle success
+        console.log('response.data ' + response.data);
 
-  create(data: any): Observable<any> {
-    return this.http.post(`${baseUrl}/signup`, data);
-  }
+        localStorage.setItem('user', JSON.stringify(response.data));
 
-  update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
-  }
+        self.zone.run(async () => {
+          self.router.navigate(['/user/dashboard']).then(r => console.log(r));
+        });
 
-  delete(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id}`);
-  }
+        return response.data;
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
 
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
-  }
-
-  findByTitle(title: any): Observable<User[]> {
-    return this.http.get<User[]>(`${baseUrl}?title=${title}`);
   }
 }

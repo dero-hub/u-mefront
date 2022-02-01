@@ -38,17 +38,8 @@ export class SignupComponent implements OnInit {
       password: this.register.password
       }
       console.log(userDetails);
-      this.http.create(userDetails)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.submitted = true;
-        },
-        error => {
-          console.log(error);
-          this.submitted = false;
-
-        });
+      this.http.signup(userDetails);
+      
     };
 
     newUser(): void {
