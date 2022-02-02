@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 })
 export class UserService {
 
+  //https://msngr.com/dqbqqcokcenu?funnel_session_id=_63da13aa-e98f-47dc-a685-d88e580dd00c
+
   constructor(private router: Router, private zone: NgZone) { }
 
   
@@ -57,6 +59,10 @@ export class UserService {
       })
       .catch(function (error) {
         // handle error
+        Swal.fire({
+          text: 'Invalid Credentials',
+          icon: 'error',
+        })
         console.log(error);
       })
 
