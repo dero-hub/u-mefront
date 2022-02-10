@@ -27,7 +27,7 @@ export class SigninComponent implements OnInit {
       username: this.user.username,
       password: this.user.password
     };
-    this.submitted = true;
+    // this.submitted = true;
     return this.http.signin(userDetails)
   }
 
