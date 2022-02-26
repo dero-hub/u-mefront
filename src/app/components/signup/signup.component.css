@@ -6,3 +6,25 @@
     min-width: 300px;
     min-height: 810px;
 }
+
+.form-rounded {
+    border-radius: 1rem;
+    }
+
+    .btn-danger {
+        font-family: Raleway-SemiBold;
+        font-size: 13px;
+        color: rgba(217, 83, 78, 0.75);
+        letter-spacing: 1px;
+        line-height: 15px;
+        border: 2px solid rgba(245, 16, 66, 0.75);
+        border-radius: 40px;
+        background: transparent;
+        transition: all 0.3s ease 0s;
+      }
+      
+      .btn-danger:hover {
+        color: #FFF;
+        background: rgba(212, 27, 104, 0.75);
+        border: 2px solid rgba(182, 46, 64, 0.75);
+      }

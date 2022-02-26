@@ -15,7 +15,7 @@
           class="card-header"
           style="
             background: white;
-            color: #a0474e;
+            color: #da3341;
             text-align: center;
             font-size: 45px;
             font-family: 'PT Mono', monospace;
@@ -31,12 +31,12 @@
             <div *ngIf="!submitted">
               <form>
                 <div class="form-group">
-                  <label for="firstname" style="color: rgb(214, 13, 46)"
+                  <label for="firstname" style="color: rgb(163, 13, 38)"
                     >First Name:</label
                   >
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control form-rounded"
                     id="firstname"
                     required
                     [(ngModel)]="register.firstname"
@@ -44,12 +44,12 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="lastname" style="color: rgb(214, 13, 46)"
+                  <label for="lastname" style="color: rgb(163, 13, 38)"
                     >Last Name:</label
                   >
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control form-rounded"
                     id="lastname"
                     required
                     [(ngModel)]="register.lastname"
@@ -57,12 +57,12 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="username" style="color: rgb(214, 13, 46)"
+                  <label for="username" style="color: rgb(163, 13, 38)"
                     >Username:</label
                   >
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control form-rounded"
                     id="username"
                     required
                     [(ngModel)]="register.username"
@@ -71,12 +71,12 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="email" style="color: rgb(214, 13, 46)"
+                  <label for="email" style="color: rgb(163, 13, 38)"
                     >email:</label
                   >
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control form-rounded"
                     id="email"
                     required
                     [(ngModel)]="register.email"
@@ -85,12 +85,12 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="dob" style="color: rgb(214, 13, 46)"
+                  <label for="dob" style="color: rgb(163, 13, 38)"
                     >D.O.B:</label
                   >
                   <input
                     type="date"
-                    class="form-control"
+                    class="form-control form-rounded"
                     id="dob"
                     required
                     [(ngModel)]="register.dob"
@@ -99,12 +99,12 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="dob" style="color: rgb(214, 13, 46)"
+                  <label for="dob" style="color: rgb(163, 13, 38)"
                     >Phone:</label
                   >
                   <input
                     type="number"
-                    class="form-control"
+                    class="form-control form-rounded"
                     id="dob"
                     required
                     [(ngModel)]="register.phone"
@@ -113,13 +113,13 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="password" style="color: rgb(214, 13, 46)"
+                  <label for="password" style="color: rgb(163, 13, 38)"
                     >Password:</label
                   >
                   <input
                     placeholder=""
                     type="password"
-                    class="form-control"
+                    class="form-control form-rounded"
                     id="password"
                     required
                     [(ngModel)]="register.password"
@@ -130,7 +130,7 @@
                 <button
                   type="submit"
                   (click)="saveUser(); dashboard()"
-                  class="btn btn-primary"
+                  class="btn btn-danger"
                 >
                   SignUp
                 </button>
