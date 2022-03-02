@@ -4,7 +4,7 @@
 }
 .img-fluid{
     min-width: 300px;
-    min-height: 810px;
+    min-height: 863px;
 }
 
 .form-rounded {
@@ -13,6 +13,7 @@
 
     .btn-danger {
         font-family: Raleway-SemiBold;
+        width: 580px;
         font-size: 13px;
         color: rgba(217, 83, 78, 0.75);
         letter-spacing: 1px;
@@ -25,6 +26,6 @@
       
       .btn-danger:hover {
         color: #FFF;
-        background: rgba(212, 27, 104, 0.75);
-        border: 2px solid rgba(182, 46, 64, 0.75);
+        background: rgba(129, 8, 58, 0.75);
+        border: 2px solid rgba(228, 16, 16, 0.75);
       }
