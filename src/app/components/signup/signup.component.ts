@@ -18,6 +18,7 @@ export class SignupComponent implements OnInit {
     username: '',
     email: '',
     dob: '',
+    phone:'',
     password: ''
     
   }
@@ -35,6 +36,7 @@ export class SignupComponent implements OnInit {
       username: this.register.username,
       email: this.register.email,
       dob: this.register.dob.toString(),
+      phone: this.register.phone.toString(),
       password: this.register.password
       }
       console.log(userDetails);
@@ -50,6 +52,7 @@ export class SignupComponent implements OnInit {
         username: '',
         email: '',
         dob: '',
+        phone: '',
         password: ''
         
       };
