@@ -1,1 +1,149 @@
-<p>signup works!</p>
+<div id="login" class="container-fluid main_container text-white d-flex">
+  <div class="row flex-fill h-100">
+    <div class="col-sm-6">
+      <img
+        src="./assets/steak1.jpeg"
+        class="img-fluid"
+        alt="Responsive image"
+      />
+    </div>
+
+    <div class="col-sm-6 h-100" style="background: white">
+      <div style="padding-top: 2.5%"></div>
+      <div class="submit-form" style="padding-top: 5.5%">
+        <div
+          class="card-header"
+          style="
+            background: white;
+            color: #f02536;
+            text-align: center;
+            font-size: 45px;
+            font-family: 'PT Mono', monospace;
+          "
+        >
+          Register Form
+        </div>
+
+        <div class="card">
+          <img src="" width="100%" />
+          <hr />
+          <div class="card-body">
+            <div *ngIf="!submitted">
+              <form>
+                <div class="form-group">
+                  <label for="firstname" style="color: rgb(214, 13, 46)"
+                    >First Name:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstname"
+                    required
+                    [(ngModel)]="register.firstname"
+                    name="firstname"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lastname" style="color: rgb(214, 13, 46)"
+                    >Last Name:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastname"
+                    required
+                    [(ngModel)]="register.lastname"
+                    name="lastname"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="username" style="color: rgb(214, 13, 46)"
+                    >Username:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    required
+                    [(ngModel)]="register.username"
+                    name="username"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" style="color: rgb(214, 13, 46)"
+                    >email:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    required
+                    [(ngModel)]="register.email"
+                    name="email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="dob" style="color: rgb(214, 13, 46)"
+                    >D.O.B:</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="dob"
+                    required
+                    [(ngModel)]="register.dob"
+                    name="dob"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="password" style="color: rgb(214, 13, 46)"
+                    >Password:</label
+                  >
+                  <input
+                    placeholder=""
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    required
+                    [(ngModel)]="register.password"
+                    name="password"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  (click)="saveUser(); dashboard()"
+                  class="btn btn-primary"
+                >
+                  SignUp
+                </button>
+              </form>
+            </div>
+
+            <div *ngIf="submitted">
+              <div class="alert alert-success" role="alert">
+                You've successfully created an Account!
+              </div>
+              <button class="btn btn-success" (click)="login()">Login</button>
+              <!--              <button class="btn btn-success" (click)="newUser()">Register</button>-->
+            </div>
+            <div
+              (click)="login()"
+              style="
+                color: #fa1043;
+                cursor: pointer;
+                padding-top: 1%;
+                text-align: left;
+              "
+            >
+              Already have an account? click here to login
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
